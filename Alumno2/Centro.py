@@ -1,13 +1,19 @@
+from abc import ABC, abstractmethod
+
 lista_centro = []
 lista_morosos = []
 lista_empleados = []
 lista_reservas = []
 lista_canchas = []
 
-class Personas:
+class Personas(ABC):
     def __init__(self, nombre, apellido):
         self.nombre = nombre
         self.apellido = apellido
+
+    @abstractmethod
+    def __str__(self):
+        pass
 
 class Clientes(Personas):
     def __init__(self, nombre, apellido, telefono, identificador, saldo=0):
@@ -24,6 +30,14 @@ class Empleados(Personas):
         super().__init__(nombre, apellido)
         self.desocupado = True
         self.lista_tareas = []
+
+    @property
+    def desocupado(self):
+        return self._desocupado
+
+    @desocupado.setter
+    def desocupado(self, estado):
+        self._desocupado = estado
 
     def registrar_cancha(self):
         if self.desocupado:
@@ -62,6 +76,21 @@ class Cancha:
     def __str__(self):
         return f"Cancha {self.numero}, Deporte: {self.deporte}, Precio: {self.precio}, Habilitada: {'Sí' if self.habilitada else 'No'}"
 
+    @classmethod
+    def crear_cancha(cls):
+        while True:
+            numero = input("Dime el número de la cancha: ")
+            if numero.isdigit():
+                numero = int(numero)
+                break
+            else:
+                print("El número de la cancha debe ser numérico")
+
+        deporte = input("Dime el deporte de la cancha: ")
+        precio = input("Dime el precio de la cancha: ")
+
+        return cls(numero, deporte, precio)
+
 class Reserva:
     def __init__(self, numero_reserva, fecha, cliente, cancha):
         self.numero_reserva = numero_reserva
@@ -81,7 +110,7 @@ class Centro:
         self.lista_empleados = []
 
     def agregar_cliente(self):
-        nombre, apellido, telefono, identificador = crear_cliente()
+        nombre, apellido, telefono, identificador = self.crear_cliente()
         for cliente in self.lista_clientes:
             if cliente.identificador == identificador:
                 print("Cliente ya registrado")
@@ -196,14 +225,13 @@ class Centro:
                 print("Error:", err)
 
     def agregar_cancha(self):
-        numero, deporte, precio = crear_cancha()
+        cancha0 = Cancha.crear_cancha()
         for cancha in self.lista_canchas:
-            if cancha.numero == numero:
+            if cancha.numero == cancha0.numero:
                 print("Cancha ya registrada")
                 return
-        cancha0 = Cancha(numero, deporte, precio)
         self.lista_canchas.append(cancha0)
-        print(f"Cancha {numero} de {deporte} añadida con éxito")
+        print(f"Cancha {cancha0.numero} de {cancha0.deporte} añadida con éxito")
 
     def listar_canchas(self):
         deporte = input("Dime el deporte: ")
@@ -355,19 +383,116 @@ def crear_cliente():
 
     return nombre, apellido, telefono, identificador
 
-def crear_cancha():
+def menu_principal():
     while True:
-        numero = input("Dime el número de la cancha: ")
-        if numero.isdigit():
-            numero = int(numero)
+        print("\n--- Menú Principal ---")
+        print("1. Gestionar Canchas")
+        print("2. Gestionar Reservas")
+        print("3. Gestionar Clientes")
+        print("4. Gestionar Empleados")
+        print("5. Salir")
+        opcion = input("Elige una opción: ")
+        
+        if opcion == '1':
+            menu_canchas()
+        elif opcion == '2':
+            menu_reservas()
+        elif opcion == '3':
+            menu_clientes()
+        elif opcion == '4':
+            menu_empleados()
+        elif opcion == '5':
+            print("Saliendo del sistema...")
             break
         else:
-            print("El número de la cancha debe ser numérico")
+            print("Opción no válida. Introduce un número entre 1 y 5.")
 
-    deporte = input("Dime el deporte de la cancha: ")
-    precio = input("Dime el precio de la cancha: ")
+def menu_canchas():
+    while True:
+        print("\n--- Menú de Canchas ---")
+        print("1. Agregar Cancha")
+        print("2. Quitar Cancha")
+        print("3. Listar Canchas por Deporte")
+        print("4. Regresar al Menú Principal")
+        opcion = input("Elige una opción: ")
+        
+        if opcion == '1':
+            centro.agregar_cancha()
+        elif opcion == '2':
+            centro.quitar_cancha()
+        elif opcion == '3':
+            centro.listar_canchas()
+        elif opcion == '4':
+            break
+        else:
+            print("Opción no válida.")
 
-    return numero, deporte, precio
+def menu_reservas():
+    while True:
+        print("\n--- Menú de Reservas ---")
+        print("1. Crear Reserva")
+        print("2. Listar Reservas por Cancha")
+        print("3. Listar Reservas por Cliente")
+        print("4. Regresar al Menú Principal")
+        opcion = input("Elige una opción: ")
+        
+        if opcion == '1':
+            centro.crear_reserva()
+        elif opcion == '2':
+            centro.listar_reservas_cancha()
+        elif opcion == '3':
+            centro.listar_reservas_cliente()
+        elif opcion == '4':
+            break
+        else:
+            print("Opción no válida.")
 
+def menu_clientes():
+    while True:
+        print("\n--- Menú de Clientes ---")
+        print("1. Agregar Cliente")
+        print("2. Quitar Cliente")
+        print("3. Mostrar Saldo de Cliente")
+        print("4. Registrar Pago de Cliente")
+        print("5. Regresar al Menú Principal")
+        opcion = input("Elige una opción: ")
+        
+        if opcion == '1':
+            centro.agregar_cliente()
+        elif opcion == '2':
+            centro.quitar_cliente()
+        elif opcion == '3':
+            centro.mostrar_saldo_cliente()
+        elif opcion == '4':
+            centro.registrar_pago()
+        elif opcion == '5':
+            break
+        else:
+            print("Opción no válida.")
 
-centro = Centro("Centro Deportivo", "123 Calle Principal")
+def menu_empleados():
+    while True:
+        print("\n--- Menú de Empleados ---")
+        print("1. Registrar Empleado")
+        print("2. Asignar Tarea a Empleado")
+        print("3. Quitar Tarea de Empleado")
+        print("4. Listar Empleados Desocupados")
+        print("5. Regresar al Menú Principal")
+        opcion = input("Elige una opción: ")
+        
+        if opcion == '1':
+            centro.registrar_empleado()
+        elif opcion == '2':
+            centro.asignar_tarea_empleado()
+        elif opcion == '3':
+            centro.quitar_tarea_empleado()
+        elif opcion == '4':
+            centro.listar_empleados_desocupados()
+        elif opcion == '5':
+            break
+        else:
+            print("Opción no válida.")
+
+centro = Centro("Centro Rubber y María", "Calle Python 01")
+
+menu_principal()
