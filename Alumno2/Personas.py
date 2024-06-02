@@ -1,5 +1,6 @@
 lista_centro = []
 lista_morosos = []
+lista_empleados = []
 
 class Personas:
     def __init__(self, nombre, apellido):
@@ -16,6 +17,38 @@ class Clientes(Personas):
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}, Telefono: {self.telefono}, ID: {self.identificador}"
+
+class Empleados(Personas):
+    def __init__(self, nombre, apellido):
+        super().__init__(nombre, apellido)
+        self.desocupado = True
+        self.lista_tareas = []
+
+    def registrar_cancha(self):
+        if self.desocupado:
+            self.desocupado = False
+            print(f"El empleado {self.nombre} {self.apellido} ha sido registrado a la cancha.")
+        else:
+            print(f"El empleado {self.nombre} {self.apellido} ya está registrado en una cancha.")
+
+    def asignar_tarea(self, tarea):
+        self.lista_tareas.append(tarea)
+        self.desocupado = False
+        print(f"Tarea '{tarea}' asignada a {self.nombre} {self.apellido}")
+
+    def quitar_tarea(self, tarea):
+        if tarea in self.lista_tareas:
+            self.lista_tareas.remove(tarea)
+            print(f"Tarea '{tarea}' quitada de {self.nombre} {self.apellido}")
+        else:
+            print(f"Tarea '{tarea}' no encontrada en la lista de tareas de {self.nombre} {self.apellido}")
+
+        if not self.lista_tareas:
+            self.desocupado = True
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}, Desocupado: {'Sí' if self.desocupado else 'No'}, Tareas: {', '.join(self.lista_tareas)}"
+
 
 def crear_cliente():
     nombre = input("Dime el nombre del cliente: ")
@@ -36,7 +69,6 @@ def crear_cliente():
 
     return nombre, apellido, telefono, identificador
 
-
 def agregar_cliente():
     nombre, apellido, telefono, identificador = crear_cliente()
     for cliente in lista_centro:
@@ -46,10 +78,6 @@ def agregar_cliente():
     cliente0 = Clientes(nombre, apellido, telefono, identificador)
     lista_centro.append(cliente0)
     print(f"Cliente {nombre} {apellido} añadido con éxito")
-
-#Agregar un cliente en la lista del centro. 
-# No se podrá agregar si en la misma ya se
-# encuentra registrado
 
 def quitar_cliente():
     if not lista_centro:
@@ -76,9 +104,82 @@ def quitar_cliente():
         except ValueError as err:
             print("Error:", err)
 
+def registrar_empleado():
+    nombre = input("Dime el nombre del empleado: ")
+    apellido = input("Dime el apellido del empleado: ")
+    empleado = Empleados(nombre, apellido)
+    lista_empleados.append(empleado)
+    print(f"Empleado {nombre} {apellido} registrado con éxito")
 
-quitar_cliente()
+def asignar_tarea_empleado():
+    if not lista_empleados:
+        print("No hay empleados registrados.")
+        return
 
-#Quitar un cliente en la lista del centro. 
-# No se podrá quitar si el mismo tiene reservas pendientes.
+    print("\nLista de empleados:")
+    for i, empleado in enumerate(lista_empleados):
+        print(f"{i + 1}. {empleado}")
 
+    while True:
+        try:
+            num_empleado = int(input("\nDime el número del empleado al que deseas asignar una tarea: "))
+            if 0 < num_empleado <= len(lista_empleados):
+                tarea = input("Dime la tarea a asignar: ")
+                lista_empleados[num_empleado - 1].asignar_tarea(tarea)
+                break
+            else:
+                print("Número de empleado inválido. Intente de nuevo.")
+        except ValueError as err:
+            print("Error:", err)
+
+def quitar_tarea_empleado():
+    if not lista_empleados:
+        print("No hay empleados registrados.")
+        return
+
+    print("\nLista de empleados:")
+    for i, empleado in enumerate(lista_empleados):
+        print(f"{i + 1}. {empleado}")
+
+    while True:
+        try:
+            num_empleado = int(input("\nDime el número del empleado al que deseas quitar una tarea: "))
+            if 0 < num_empleado <= len(lista_empleados):
+                tarea = input("Dime la tarea a quitar: ")
+                lista_empleados[num_empleado - 1].quitar_tarea(tarea)
+                break
+            else:
+                print("Número de empleado inválido. Intente de nuevo.")
+        except ValueError as err:
+            print("Error:", err)
+
+def listar_empleados_desocupados():
+    desocupados = [empleado for empleado in lista_empleados if empleado.desocupado]
+    if not desocupados:
+        print("No hay empleados desocupados.")
+    else:
+        print("\nEmpleados desocupados:")
+        for empleado in desocupados:
+            print(empleado)
+
+def quitar_empleado_cancha():
+    if not lista_empleados:
+        print("No hay empleados registrados.")
+        return
+
+    print("\nLista de empleados:")
+    for i, empleado in enumerate(lista_empleados):
+        print(f"{i + 1}. {empleado}")
+
+    while True:
+        try:
+            num_empleado = int(input("\nDime el número del empleado que deseas quitar de la cancha: "))
+            if 0 < num_empleado <= len(lista_empleados):
+                lista_empleados[num_empleado - 1].desocupado = True
+                lista_empleados[num_empleado - 1].lista_tareas = []
+                print(f"\nEl empleado {lista_empleados[num_empleado - 1].nombre} {lista_empleados[num_empleado - 1].apellido} ahora está desocupado.")
+                break
+            else:
+                print("Número de empleado inválido. Intente de nuevo.")
+        except ValueError as err:
+            print("Error:", err)
