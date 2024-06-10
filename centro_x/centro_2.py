@@ -338,6 +338,31 @@ class Centro:
         cliente.saldo -= cancha.precio
         print(f"Reserva creada con éxito: {reserva0}")
 
+    def cancelar_reserva(self):
+        if not lista_reservas:
+            print("No hay reservas registradas para cancelar.")
+            return
+
+        print("\nLista de Reservas Actuales:")
+        for i, reserva in enumerate(lista_reservas):
+            print(f"{i + 1}. {reserva}")
+
+        while True:
+            try:
+                num_reserva = int(input("\nElige el número de la reserva que deseas cancelar: "))
+                if 0 < num_reserva <= len(lista_reservas):
+                    reserva_cancelada = lista_reservas.pop(num_reserva - 1)
+                    cliente = reserva_cancelada.cliente
+                    # Reembolsar o ajustar saldo si es necesario
+                    cliente.saldo += reserva_cancelada.cancha.precio
+                    print(f"Reserva cancelada: {reserva_cancelada}. Saldo actualizado del cliente: {cliente.saldo}")
+                    break
+                else:
+                    print("Número de reserva inválido. Por favor, intenta de nuevo.")
+            except ValueError:
+                print("Por favor, introduce un número válido.")
+
+
     def listar_reservas_cliente(self):
         cliente_id = input("Dime el identificador del cliente: ")
         reservas_cliente = []
@@ -450,6 +475,7 @@ def menu_reservas():
         print("2. Listar Reservas por Cancha")
         print("3. Listar Reservas por Cliente")
         print("4. Regresar al Menú Principal")
+        print("5. Regresar al Menú Principal")
         opcion = input("Elige una opción: ")
         
         if opcion == '1':
@@ -459,6 +485,8 @@ def menu_reservas():
         elif opcion == '3':
             centro.listar_reservas_cliente()
         elif opcion == '4':
+            centro.cancelar_reserva()
+        elif opcion == '5':
             break
         else:
             print("Opción no válida.")
