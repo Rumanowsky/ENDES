@@ -110,6 +110,37 @@ class Centro:
         self.lista_clientes = []
         self.lista_empleados = []
 
+    def aplicar_descuento(self):
+        cliente_id = input("Dime el identificador del cliente: ")
+        cliente = None
+        for cliente_item in self.lista_clientes:
+            if cliente_item.identificador == cliente_id:
+                cliente = cliente_item
+                break
+
+        if cliente:
+            while True:
+                try:
+                    precio = float(input("Dime el precio original: "))
+                    break
+                except ValueError:
+                    print("El precio debe ser un número.")
+
+            while True:
+                try:
+                    descuento = float(input("Dime el porcentaje de descuento: "))
+                    if 0 <= descuento <= 100:
+                        break
+                    else:
+                        print("El descuento debe ser un número entre 0 y 100.")
+                except ValueError:
+                    print("El descuento debe ser un número.")
+
+            nuevo_precio = precio - (precio * descuento / 100)
+            print(f"El nuevo precio con descuento es: {nuevo_precio}")
+        else:
+            print("Cliente no encontrado.")
+
     def agregar_cliente(self):
         nombre, apellido, telefono, identificador = self.crear_cliente()
         for cliente in self.lista_clientes:
@@ -482,7 +513,8 @@ def menu_clientes():
         print("2. Quitar Cliente")
         print("3. Mostrar Saldo de Cliente")
         print("4. Registrar Pago de Cliente")
-        print("5. Regresar al Menú Principal")
+        print("5. Aplicar Descuento a Cliente")
+        print("6. Regresar al Menú Principal")
         opcion = input("Elige una opción: ")
         
         if opcion == '1':
@@ -494,6 +526,8 @@ def menu_clientes():
         elif opcion == '4':
             centro.registrar_pago()
         elif opcion == '5':
+            centro.aplicar_descuento()
+        elif opcion == '6':
             break
         else:
             print("Opción no válida.")
