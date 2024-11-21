@@ -8,59 +8,60 @@
     <link rel="stylesheet/css" href="./index.css" />
     <style>
         body {
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(140, 180, 244, 0.5);
+            margin: 0;
+            padding: 0;
         }
 
         img {
-            border-radius: 10px;
+            padding-top: 37px;
+            
             object-fit: cover;
+            width: 100%;
         }
 
         header {
             text-align: center;
-
         }
 
         .cabecera {
-            height: 40px;
+            position: fixed;
+            background-color: rgba(216, 201, 201, 0.921);
+            top: 0;
+            left: 0;
             width: 100%;
-            background-color: gray;
-            border: 3px solid black;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-
-
+            padding: 10px 30px;
+            z-index: 1;
         }
 
         nav a {
             color: black;
             margin: 0 60px;
             text-decoration: none;
-
-
         }
 
         footer {
             background-color: gray;
             color: black;
             text-align: center;
-            padding: 20px;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         main {
             text-align: center;
+            margin-top: 100px; 
         }
 
         .humildad {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            
         }
 
-        .seccion_humilde{
+        .seccion_humilde {
             background-color: #f4f4f4;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -72,48 +73,57 @@
 
         .titulo {
             text-align: center;
+            margin-bottom: 20px;
         }
 
+        .sorteo {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .sorteo img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Rumanos sin fronteras</h1>
-        <h1>YERAY NO EXISTE, ES UNA CONSPIRACIÓN</h1>
+        <div class="cabecera">
+            <nav class="nav">
+                <a href="">Sobre nosotros</a>
+                <a href="./productos.html">Productos</a>
+                <a href="">Contacto</a>
+            </nav>
+        </div>
     </header>
-    <br />
-    <div class="cabecera">
-        <nav class="nav">
-            <a href="">Sobre nosotros</a>
-            <a href="./productos.html">Productos</a>
-            <a href="">Contacto</a>
-        </nav>
-    </div>
-    <br>
-    <img class="terraneitor" src="./Terraneitor.jpg" alt="patinete eléctrico de alta gamma" height="300px"
-        width="100%" />
-    <div class="titulo">
 
+    <img class="terraneitor" src="https://www.ecomove.es/wp-content/uploads/2023/10/mejores-patinetes-electricos-potentes-del-mercado.jpg" height="300px" />
+
+    <div class="titulo">
         <h3>Nuestra humilde página web</h3>
     </div>
+
     <main class="humildad">
         <section class="seccion_humilde">
-            <p>somos muy humildes</p>
-            <p>holaaaaaaaaaaaaaa</p>
-
+            <p>Somos muy humildes</p>
+            <p>no puc mes</p>
         </section>
         <section class="seccion_humilde">
-            <p>hola rubber</p>
-            <p>holaaaaaaaaaaaaaa</p>
-
+            <p>Hola Rubber</p>
+            <p>bof</p>
         </section>
     </main>
 
+    <section class="sorteo">
+        <img src="./Sorteo (1).png" alt="Imagen del sorteo">
+    </section>
+
     <footer>
-        <p>&copy; Todos los derechos son de rubber.</p>
-
-
+        <p>&copy; Todos los derechos son de Rubber.</p>
     </footer>
 </body>
 
