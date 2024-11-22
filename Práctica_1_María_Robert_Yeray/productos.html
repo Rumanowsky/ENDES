@@ -10,14 +10,16 @@
         
         body {
             background-color: rgba(255, 255, 255, 0.5);
-            font-family: Arial, sans-serif;
+            font-family:Georgia, 'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
+            
         }
 
         img {
     
             object-fit: cover;
+            border-radius: 10px;
         }
 
         h1, h3 {
@@ -26,21 +28,20 @@
         }
 
         p {
-            font-size: 14px;
+            font-size: 13.5px;
         }
 
         header {
             background-color: white;
-            padding: 10px 0;
             border-bottom: 3px solid #ccc;
+            
         }
-        header {
-            text-align: center;
-        }
+       
+    
 
         .cabecera {
             position: fixed;
-            background-color: rgba(216, 201, 201, 0.921);
+            background-color: rgba(133, 133, 133, 0.707);
             top: 0;
             left: 0;
             width: 100%;
@@ -53,10 +54,16 @@
             margin: 0 20px;
             text-decoration: none;
             font-size: 16px;
+            
+        }
+        nav {
+            display: flex;
+            justify-content:space-evenly;
         }
 
         nav a:hover {
             text-decoration: underline;
+            
         }
 
         main {
@@ -69,6 +76,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            
         }
 
         .seccion_humilde {
@@ -105,11 +113,16 @@
             text-align: center;
             padding-top: 20px;
         }
+
+        #colores {
+            height: 26px;
+        }
+
     </style>
 </head>
 
 <body>
-
+ 
     <header>
         <div class="cabecera">
             <nav>
@@ -120,6 +133,7 @@
         </div>
     </header>
 
+    <br>
     <h1>Productos</h1>
 
     <div class="titulo">
@@ -130,6 +144,7 @@
         <div class="humildad">
             <section class="seccion_humilde">
                 <img src="https://electyum.com/wp-content/uploads/2023/09/Sin-titulo.webp" alt="Patinete eléctrico chulo" />
+                <img id="colores" src="colores.png">
                 <h3>Patin chulo</h3>
                 <h3>133.99€</h3>
                 <p style="color: green;">Envío gratis</p>
@@ -138,6 +153,8 @@
 
             <section class="seccion_humilde">
                 <img src="https://ima.europamuebles.com/mihogar/pi/c/0/7/3/1/4/cecotec_patinetes-electricos_1.jpg" alt="Patinete eléctrico chulísimo" />
+                <img id="colores" src="colores.png">
+
                 <h3>Patin chulísimo</h3>
                 <h3 class="oferta"><del>133.99€</del> 119.99€</h3>
                 <p style="color: green;">Envío gratis</p>
@@ -146,14 +163,18 @@
 
             <section class="seccion_humilde">
                 <img src="https://www.ferrersport.com/sites/default/files/productos/complementos/2020/Patin-AzulBlanco-scooterurbancity-imag1.jpg" alt="Patinete eléctrico humilde" />
+                <img id="colores" src="colores.png">
+
                 <h3>Patin humilde</h3>
-                <h3>1.99€</h3>
+                <h3>110.99€</h3>
                 <p style="color: green;">Envío gratis</p>
                 <p style="color: green;">Recíbelo mañana</p>
             </section>
 
             <section class="seccion_humilde">
                 <img src="https://tecnologiadelvalle.com/2732-large_default/patinete-el%C3%A9ctrico-matriculable-1000w-o-1800w-con-asiento-spirit.jpg" alt="Patinete eléctrico para abuelo" />
+                <img id="colores" src="colores.png">
+
                 <h3>Patin para tu abuelo</h3>
                 <h3>133.99€</h3>
                 <p style="color: green;">Envío gratis</p>
@@ -162,31 +183,39 @@
 
             <section class="seccion_humilde">
                 <img src="https://www.toysrus.es/medias/?context=bWFzdGVyfHByb2R1Y3RfaW1hZ2VzfDU1OTQ5fGltYWdlL2pwZWd8YUdOakwyZzFNaTh4TVRrek16YzFOams0TVRJM09BfDQ0NWU0NjkyNDk0MTBkMGFlOGZhNWRmMDk5MTEwNTMwYWU0M2I2NTNhZTE2OWNkMzkzZmE3MzVhN2RhMmMzMmM" alt="Patinete eléctrico de alta gama" />
+                <img id="colores" src="colores.png">
+
                 <h3>Patin demure</h3>
-                <h3 class="oferta"><del>133.99€</del> 119.99€</h3>
+                <h3> 560.99€</h3>
                 <p style="color: green;">Envío gratis</p>
                 <p style="color: green;">Recíbelo mañana</p>
             </section>
 
             <section class="seccion_humilde">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXfkiizA6BFo-gZrLXJ3BRjiG5fb1koELdYQ&s" alt="Patinete eléctrico infantil" />
+                <img id="colores" src="colores.png">
+
                 <h3>Patin punto limpio</h3>
-                <h3 class="oferta">1.99€</h3>
+                <h3>1208.80€</h3>
                 <p style="color: green;">Envío gratis</p>
                 <p style="color: green;">Recíbelo mañana</p>
             </section>
             <section class="seccion_humilde">
                 <img src="https://cdn.palbincdn.com/users/15482/images/WhatsApp-Image-2024-01-22-at-12.00.00-1705921283.jpeg" alt="Patinete eléctrico infantil" />
+                <img id="colores" src="colores.png">
+
                 <h3>Patin punto limpio</h3>
 
-                <h3 class="oferta">1.99€</h3>
+                <h3>120.89€</h3>
                 <p style="color: green;">Envío gratis</p>
                 <p style="color: green;">Recíbelo mañana</p>
             </section>
             <section class="seccion_humilde">
-                <img src="https://www.solopitbike.es/3616-medium_default/patinete-electrico-replica-xiaomi-infantil.jpg" alt="Patinete eléctrico infantil" />
+                <img src="https://motork.com/media/2022/12/patinete-electrico-300w-eco-300-1.jpg" alt="Patinete eléctrico infantil" />
+                
+                <img id="colores" src="colores.png">
                 <h3>Patin punto limpio</h3>
-                <h3 class="oferta">1.99€</h3>
+                <h3>100.99€</h3>
                 <p style="color: green;">Envío gratis</p>
                 <p style="color: green;">Recíbelo mañana</p>
             </section>

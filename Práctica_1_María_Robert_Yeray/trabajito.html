@@ -7,7 +7,7 @@
     
     <style>
         body {
-            background-color: rgba(140, 180, 244, 0.5);
+            background-color: rgba(255, 255, 255, 0.5);
             margin: 0;
             padding: 0;
         }
@@ -18,11 +18,9 @@
             padding-top: 37px;
         }
 
-        header {
-            text-align: center;
-        }
+    
 
-        .cabecera {
+        header {
             position: fixed;
             background-color: rgba(216, 201, 201, 0.921);
             top: 0;
@@ -30,7 +28,9 @@
             width: 100%;
             padding: 10px 30px;
             z-index: 1;
+            text-align: center;
         }
+       
 
         nav a {
             color: black;
@@ -39,7 +39,7 @@
         }
 
         footer {
-            background-color: gray;
+            background-color: rgb(255, 255, 255);
             color: black;
             text-align: center;
             padding: 20px;
@@ -86,18 +86,29 @@
             width: 100%;
             height: auto;
         }
+        
+        .doble {
+            object-fit: cover;
+            margin: 10px;
+            gap: 10px;
+            min-height: 300px;
+            height: 300px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="cabecera">
+        
             <nav class="nav">
                 <a href="">Sobre nosotros</a>
                 <a href="./productos.html">Productos</a>
                 <a href="">Contacto</a>
             </nav>
-        </div>
+        
     </header>
 
     <img class="terraneitor" src="https://www.ecomove.es/wp-content/uploads/2023/10/mejores-patinetes-electricos-potentes-del-mercado.jpg" height="300px" />
@@ -121,11 +132,18 @@
         <img src="./Sorteo.png" alt="Imagen del sorteo">
     </section>
 
+    <div class="doble">
+        <img src="https://www.hibridosyelectricos.com/uploads/s1/75/60/4/2019070309332622948.jpeg">
+        <img src="https://www.seguridadvialenlaempresa.com/media/blog/normas-seguridad-patinete-electrico-trabajo-768x520-1.jpg">
+
+    </div>
+
     <footer>
         <p>&copy; Todos los derechos son de Rubber.</p>
     </footer>
 
-    <!-- <img src="https://electriccity.es/wp-content/uploads/2023/03/patinete-electrico-portada.jpg" alt=""> -->
+    <!-- <img src="https://electriccity.es/wp-content/uploads/2023/03/patinete-electrico-portada.jpg" alt=""> 
+     img2 https://static.laverdad.es/www/multimedia/201809/22/media/cortadas/129254327--624x661-kW2H--624x661@La%20Verdad.jpg-->
 </body>
 
 </html>
