@@ -1,0 +1,130 @@
+/* Selectores Universales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Modelo de cajas */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #0044cc;
+    color: white;
+    padding: 1rem 0;
+}
+
+/* Main */
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Selectores de tipo y atributos */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Botón */
+button {
+    display: block;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Pseudo-clases */
+button:hover {
+    background-color: #003399;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus {
+    outline: 2px dashed #0044cc;
+    outline-offset: 2px;
+}
+
+/* Selectores de clase */
+.contact-form {
+    margin-top: 1rem;
+}
+
+/* Selectores de ID */
+#formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Selectores de pseudo-elementos */
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #0044cc;
+    margin: 0.5rem auto;
+}
+
+/* Pseudo-clases :link y :visited */
+a:link {
+    color: #0044cc;
+}
+
+a:visited {
+    color: #660099;
+}
+
+/* Colores y fondos */
+body {
+    background-image: linear-gradient(to bottom, #e9f5ff, #ffffff);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Responsividad: fuentes con unidades relativas */
+h1 {
+    font-size: 4vw; /* Cambia según el ancho de la ventana */
+}
+
+p, label, textarea {
+    font-size: 1rem; /* Cambia según la jerarquía */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
