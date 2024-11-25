@@ -131,7 +131,7 @@ body {
 /* Responsividad: fuentes con unidades relativas */
 h1 {
     font-size: 4vw; /* Cambia según el ancho de la ventana */
-    padding: 2vh 3vh;
+    padding: 5vh 6vh;
 }
 
 p, label, textarea {
