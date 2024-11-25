@@ -23,6 +23,20 @@ header {
     background-color: #0044cc;
     color: white;
     padding: 1rem 0;
+    position: fixed;
+    background-color: rgba(216, 201, 201, 0.921);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    z-index: 1;
+    text-align: center;
+}
+
+nav a {
+    color: black;
+    margin: 0 60px;
+    text-decoration: none;
 }
 
 /* Main */
