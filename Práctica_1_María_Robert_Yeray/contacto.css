@@ -1,4 +1,4 @@
-/* General */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
     min-height: 100vh;
 }
 
-/* Encabezado */
+
 header {
     position: fixed;
     top: 0;
@@ -43,7 +43,7 @@ header nav a:hover {
     color: #ffcc00;
 }
 
-/* Imagen superior */
+
 main img {
     width: 100%;
     height: auto;
@@ -52,7 +52,7 @@ main img {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Formulario */
+
 main {
     flex: 1;
     max-width: 800px;
@@ -77,7 +77,7 @@ textarea {
     resize: none;
 }
 
-/* Botón */
+
 button {
     width: 100%;
     padding: 1rem;
@@ -101,7 +101,7 @@ button:active {
     transform: translateY(0);
 }
 
-/* Footer */
+
 footer {
     padding: 1rem;
     background: #333;
