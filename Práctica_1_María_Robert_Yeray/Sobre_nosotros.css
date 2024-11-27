@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -68,7 +67,8 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-.seccion p, .seccion ul {
+.seccion p,
+.seccion ul {
     font-size: 1rem;
     margin-bottom: 15px;
 }
