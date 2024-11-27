@@ -1,11 +1,11 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
 }
 
-/* Encabezado */
+
 header {
     background-color: #0056b3;
     color: #fff;
@@ -51,7 +51,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Secciones */
+
 .seccion {
     background-color: #fff;
     margin: 20px auto;
@@ -82,7 +82,6 @@ nav a:hover {
     margin-bottom: 5px;
 }
 
-/* Enlaces */
 a {
     color: #0056b3;
 }
@@ -91,7 +90,7 @@ a:hover {
     color: #003366;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     background-color: #333;

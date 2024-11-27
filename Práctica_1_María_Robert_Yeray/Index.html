@@ -6,19 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
+ 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
         body {
+            background-image: url(https://img.freepik.com/foto-gratis/fondo-colorido-borroso-vivo_58702-2655.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
             background-color: rgba(255, 255, 255, 0.5);
             margin: 0;
             padding: 0;
+            font-size: 16px; 
+            font-weight: 400; 
         }
 
         img {
             object-fit: cover;
             width: 100%;
             padding-top: 37px;
+            max-width: 100%; 
+            height: auto;
+            min-height: 150px; 
         }
-
-    
 
         header {
             position: fixed;
@@ -29,13 +43,51 @@
             padding: 10px 30px;
             z-index: 1;
             text-align: center;
+            font-size: 1.2rem; 
         }
        
+        .cabecera {
+            position: fixed;
+            background-color: rgba(133, 133, 133, 0.707);
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2vh 3vh; 
+            z-index: 1;
+        }
 
         nav a {
             color: black;
-            margin: 0 60px;
+            margin: 0 20px;
             text-decoration: none;
+            font-size: 1em; 
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        nav a:link {
+            color: black;
+            font-size: 1rem;
+        }
+
+        nav a:visited {
+            color: #ffffff;
+        }
+
+        nav a:hover {
+            text-decoration: underline overline #ffffff74;
+            color: #ffffff;
+        }
+
+        nav a:active {
+            color: #cea6da;
+        }
+
+        nav a:focus {
+            outline: 2px solid #00000000;
         }
 
         footer {
@@ -46,6 +98,7 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            font-size: 0.9rem; 
         }
 
         main {
@@ -67,11 +120,14 @@
             padding: 20px;
             text-align: center;
             margin: 20px;
+            min-width: 300px; 
+            max-width: 600px; 
         }
 
         .titulo {
             text-align: center;
             margin-bottom: 20px;
+            font-size: 2vw; 
         }
 
         .sorteo {
@@ -82,12 +138,13 @@
         }
 
         .sorteo img {
-            
             width: 100%;
             height: auto;
+            max-height: 500px; 
+            min-height: 200px; 
         }
         
-        .doble {
+        #doble {
             object-fit: cover;
             margin: 10px;
             gap: 10px;
@@ -97,42 +154,51 @@
             display: flex;
             flex-direction: row;
         }
+
+       
+        [alt] {
+            border: 1px solid #ddd;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        
-            <nav class="nav">
+        <div class="cabecera">
+            <nav>
                 <a href="./Sobre_nosotros.html">Sobre nosotros</a>
                 <a href="./productos.html">Productos</a>
                 <a href="./Contacto.html">Contacto</a>
             </nav>
-        
+        </div>
     </header>
 
     <img class="terraneitor" src="https://www.ecomove.es/wp-content/uploads/2023/10/mejores-patinetes-electricos-potentes-del-mercado.jpg" height="300px" />
 
     <div class="titulo">
-        <h3>Nuestra humilde página web</h3>
+        <h3>Ruedas sin Divs</h3>
     </div>
 
     <main class="humildad">
         <section class="seccion_humilde">
-            <p>Somos muy humildes</p>
-            <p>¡Hola!</p>
+            <p>Hola, somos Rubber y María, dos apasionados del patinaje que emprendimos este camino juntos para ofrecerte los mejores patines en una tienda online... aunque nunca supimos centrar un div.
+
+                Podríamos decir que dedicamos más tiempo a elegir ruedas de calidad que a aprender CSS</p>
         </section>
         <section class="seccion_humilde">
-            <p>Hola Rubber</p>
-            <p>¡Hola!</p>
+            <p>te aseguramos que aquí encontrarás todo lo necesario para rodar con estilo.
+
+                ¿Listo para empezar tu próxima aventura sobre ruedas? Echa un vistazo a nuestra colección y déjanos ser parte de tu viaje. 🚀
+                
+                (PD: Si ves algo descentrado, es puro estilo... o eso queremos creer).</p>
         </section>
     </main>
 
     <section class="sorteo">
-        <img src="./Sorteo.png" alt="Imagen del sorteo">
+        <img src="./Sorteo (1).png" alt="Imagen del sorteo">
     </section>
 
-    <div class="doble">
+    <div id="doble">
         <img src="https://www.hibridosyelectricos.com/uploads/s1/75/60/4/2019070309332622948.jpeg">
         <img src="https://www.seguridadvialenlaempresa.com/media/blog/normas-seguridad-patinete-electrico-trabajo-768x520-1.jpg">
 
@@ -142,8 +208,6 @@
         <p>&copy; Todos los derechos son de Rubber.</p>
     </footer>
 
-    <!-- <img src="https://electriccity.es/wp-content/uploads/2023/03/patinete-electrico-portada.jpg" alt=""> 
-     img2 https://static.laverdad.es/www/multimedia/201809/22/media/cortadas/129254327--624x661-kW2H--624x661@La%20Verdad.jpg-->
 </body>
 
 </html>
