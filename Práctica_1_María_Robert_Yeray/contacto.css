@@ -6,6 +6,7 @@
 }
 
 body {
+    background-image: url(./Imagenes/parque.jpg);
     text-align: center;
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to bottom, #e3f2fd, #ffffff);
@@ -17,6 +18,10 @@ body {
     min-height: 100vh;
 }
 
+img {
+    object-fit: cover;
+    border-radius: 10px;
+}
 
 header {
     position: fixed;
