@@ -5,143 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="productos.css" />
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik+Wet+Paint&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: rgba(255, 255, 255, 0.5);
-            background-image: url(https://img.freepik.com/foto-gratis/fondo-colorido-borroso-vivo_58702-2655.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            font-family: "Mulish";
-        }
-
-        img {
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        h1,
-        h3 {
-            margin: 10px 0;
-            font-weight: normal;
-        }
-
-        p {
-            font-size: 0.8em;
-        }
-
-        header {
-            background-color: white;
-            border-bottom: 3px solid #ccc;
-        }
-
-        .cabecera {
-            position: fixed;
-            background-color: rgba(133, 133, 133, 0.707);
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 2vh 3vh;
-            z-index: 1;
-        }
-
-        nav a {
-            color: black;
-            margin: 0 20px;
-            text-decoration: none;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        nav a:link {
-            color: black;
-            font-size: 1rem;
-        }
-
-        nav a:visited {
-            color: #ffffff;
-        }
-
-        nav a:hover {
-            text-decoration: underline overline #ffffff74;
-            color: #ffffff;
-        }
-
-        nav a:active {
-            color: #cea6da;
-        }
-
-        nav a:focus {
-            outline: 2px solid #00000000;
-        }
-
-        main {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .productos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .patin {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            width: 250px;
-            padding: 20px;
-            text-align: center;
-
-        }
-
-        .patin img {
-            max-width: 100%;
-            height: 200px;
-        }
-
-
-
-        .oferta {
-            color: red;
-        }
-
-        footer {
-            background-color: white;
-            text-align: center;
-            padding: 3vh;
-            border-top: 3px solid #ccc;
-        }
-
-        #titulo {
-            font-size: 5vw;
-            font-weight: 20px;
-            padding-top: 20px;
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            font-family: "Mulish";
-        }
-
-        #subtitulo {
-            font-size: larger;
-            margin-bottom: 40px;
-        }
-    </style>
+   
 </head>
 
 <body>
@@ -163,7 +29,7 @@
 
         <section class="productos">
             <article class="patin">
-                <img src="https://electyum.com/wp-content/uploads/2023/09/Sin-titulo.webp"
+                <img src="Imagenes/patin_chulo.webp"
                     alt="Patinete eléctrico chulo" />
                 <h3>Patin chulo</h3>
                 <h3>133.99€</h3>
@@ -172,7 +38,7 @@
             </article>
 
             <article class="patin">
-                <img src="https://ima.europamuebles.com/mihogar/pi/c/0/7/3/1/4/cecotec_patinetes-electricos_1.jpg"
+                <img src="Imagenes/patin_chulisimo.jpg"
                     alt="Patinete eléctrico chulísimo" />
                 <h3>Patin chulísimo</h3>
                 <h3 class="oferta"><del>133.99€</del> 119.99€</h3>
@@ -181,7 +47,7 @@
             </article>
 
             <article class="patin">
-                <img src="https://www.ferrersport.com/sites/default/files/productos/complementos/2020/Patin-AzulBlanco-scooterurbancity-imag1.jpg"
+                <img src="Imagenes/patin_humilde.jpg"
                     alt="Patinete eléctrico humilde" />
                 <h3>Patin humilde</h3>
                 <h3>110.99€</h3>
@@ -190,7 +56,7 @@
             </article>
 
             <article class="patin">
-                <img src="https://tecnologiadelvalle.com/2732-large_default/patinete-el%C3%A9ctrico-matriculable-1000w-o-1800w-con-asiento-spirit.jpg"
+                <img src="Imagenes/abuelo.jpg"
                     alt="Patinete eléctrico para abuelo" />
                 <h3>Patin para tu abuelo</h3>
                 <h3>133.99€</h3>
@@ -199,7 +65,7 @@
             </article>
 
             <article class="patin">
-                <img src="https://www.toysrus.es/medias/?context=bWFzdGVyfHByb2R1Y3RfaW1hZ2VzfDU1OTQ5fGltYWdlL2pwZWd8YUdOakwyZzFNaTh4TVRrek16YzFOams0TVRJM09BfDQ0NWU0NjkyNDk0MTBkMGFlOGZhNWRmMDk5MTEwNTMwYWU0M2I2NTNhZTE2OWNkMzkzZmE3MzVhN2RhMmMzMmM"
+                <img src="Imagenes/alta_gama.jpg"
                     alt="Patinete eléctrico de alta gama" />
                 <h3>Patin demure</h3>
                 <h3> 560.99€</h3>
@@ -208,7 +74,7 @@
             </article>
 
             <article class="patin">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXfkiizA6BFo-gZrLXJ3BRjiG5fb1koELdYQ&s"
+                <img src="Imagenes/infantil.jpg"
                     alt="Patinete eléctrico infantil" />
                 <h3>Patin punto limpio</h3>
                 <h3>1208.80€</h3>
@@ -217,7 +83,7 @@
             </article>
 
             <article class="patin">
-                <img src="https://cdn.palbincdn.com/users/15482/images/WhatsApp-Image-2024-01-22-at-12.00.00-1705921283.jpeg"
+                <img src="Imagenes/normal.jpeg"
                     alt="Patinete eléctrico infantil" />
                 <h3>Patin normal</h3>
                 <h3>120.89€</h3>
@@ -226,7 +92,7 @@
             </article>
 
             <article class="patin">
-                <img src="https://motork.com/media/2022/12/patinete-electrico-300w-eco-300-1.jpg"
+                <img src="Imagenes/secas.jpg"
                     alt="Patinete eléctrico infantil" />
                 <h3>Patin a secas</h3>
                 <h3>100.99€</h3>

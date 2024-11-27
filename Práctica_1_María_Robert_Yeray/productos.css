@@ -1,0 +1,134 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik+Wet+Paint&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url(https://img.freepik.com/foto-gratis/fondo-colorido-borroso-vivo_58702-2655.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Mulish";
+}
+
+img {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+h1,
+h3 {
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+p {
+    font-size: 0.8em;
+}
+
+header {
+    background-color: white;
+    border-bottom: 3px solid #ccc;
+}
+
+.cabecera {
+    position: fixed;
+    background-color: rgba(133, 133, 133, 0.707);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2vh 3vh;
+    z-index: 1;
+}
+
+nav a {
+    color: black;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav a:link {
+    color: black;
+    font-size: 1rem;
+}
+
+nav a:visited {
+    color: #ffffff;
+}
+
+nav a:hover {
+    text-decoration: underline overline #ffffff74;
+    color: #ffffff;
+}
+
+nav a:active {
+    color: #cea6da;
+}
+
+nav a:focus {
+    outline: 2px solid #00000000;
+}
+
+main {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.patin {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.patin img {
+    max-width: 100%;
+    height: 200px;
+}
+
+
+
+.oferta {
+    color: red;
+}
+
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 3vh;
+    border-top: 3px solid #ccc;
+}
+
+#titulo {
+    font-size: 5vw;
+    font-weight: 20px;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: "Mulish";
+}
+
+#subtitulo {
+    font-size: larger;
+    margin-bottom: 40px;
+}
