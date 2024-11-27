@@ -6,10 +6,12 @@
 }
 
 body {
-    background-image: url(./Imagenes/parque.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.05)), 
+                      url(Imagenes/parque.jpg);
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+    /* background: linear-gradient(to bottom, #e3f2fd, #ffffff); */
+    background-size: cover;
     color: #333;
     margin: 0;
     padding: 0;
